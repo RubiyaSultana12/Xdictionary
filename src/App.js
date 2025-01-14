@@ -6,7 +6,7 @@ const dictionary = [
     { word: "State", meaning: "An object that stores data for a component." }
 ]
 
-function App() {
+const App = () => {
     const [text, setText] = useState("");
     const [definition, setDefinition] = useState()
 
@@ -14,11 +14,7 @@ function App() {
 
     const handleClick = ()=> {
         let item = dictionary.find(i=> i.word.toLocaleLowerCase() === text.toLocaleLowerCase());
-         if (item) {
-      setDefinition(item.meaning);
-    } else {
-      setDefinition("Word not found in the dictionary");
-    }
+        setDefinition(item ? item.meaning : "Word not found in the dictionary.");
     }
 
     return (
@@ -31,7 +27,5 @@ function App() {
         </div>
     );
 };
-
-
 
 export default App;
