@@ -15,10 +15,12 @@ function App() {
  
   const [searchTerm, setSearchTerm] = useState("");
   const [result, setResult] = useState();
-
+  
+ const handleSearch=(e)=>{
+   setSearchTerm(e.target.value);
+ }
+   
   const handleClick = () => {
-
-
     const found = dictionary.find(
       (item) => item.word.toLowerCase() === searchTerm.toLowerCase()
     );
@@ -37,7 +39,7 @@ function App() {
         type="text"
         placeholder="Search for a word..."
         value={searchTerm}
-        onChange={((e) => setSearchTerm(e.target.value))}
+        onChange={handleSearch}
       />
       <button onClick={handleClick}>Search</button>
       <h4>Definition:</h4>
