@@ -20,13 +20,13 @@ function App() {
 
   const handleClick = () => {
     let found = dictionary.find(
-      (item) => item.word.toLowerCase() === search.toLowerCase()
+      (item) => item.word.toLowerCase() === text.toLowerCase()
     );
 
     if (found) {
-      setResult(found.meaning);
+      setDefinition(found.meaning);
     } else {
-      setResult("Word not found in the dictionary");
+      setDefinition("Word not found in the dictionary");
     }
   };
 
