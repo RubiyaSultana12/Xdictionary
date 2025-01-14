@@ -11,11 +11,11 @@ const dictionary = [
 ];
 
 function App() {
-  const [search, setSearch] = useState("");
-  const [result, setResult] = useState();
+ const [text, setText] = useState("");
+    const [definition, setDefinition] = useState()
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
+   setText(e.target.value)
   };
 
   const handleClick = () => {
@@ -35,13 +35,13 @@ function App() {
       <h1>Dictionary App</h1>
       <input
         type="text"
-        value={search}
+        value={text}
         placeholder="Search for a word..."
         onChange={handleSearch}
       />
       <button onClick={handleClick}>Search</button>
       <h4>Definition:</h4>
-      <p>{result}</p>
+       <p>{definition}</p>
     </div>
   );
 }
