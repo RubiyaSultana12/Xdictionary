@@ -18,7 +18,7 @@ function App() {
 
   const handleClick = () => {
     const found = dictionary.find(
-      (item) => item.word.toLowerCase() === searchTerm.toLowerCase()
+      (item) => item.word.toLocaleLowerCase()  === searchTerm.toLocaleLowerCase() 
     );
 
     if (found) {
