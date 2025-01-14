@@ -13,15 +13,15 @@ const dictionary=[
 ]
 function App() {
  
-  const [searchTerm, setSearchTerm] = useState("");
+  const [search, setSearch] = useState("");
   const [result, setResult] = useState();
   
  const handleSearch=e=>
-   setSearchTerm(e.target.value);
+   setSearch(e.target.value);
    
   const handleClick = () => {
     let found = dictionary.find
-      (item => item.word.toLowerCase() === searchTerm.toLowerCase()
+      (item => item.word.toLowerCase() === search.toLowerCase()
     );
 
     if (found) {
@@ -36,6 +36,7 @@ function App() {
 
       <input
         type="text"
+        value={search}
         placeholder="Search for a word..."
         onChange={handleSearch}
       />
