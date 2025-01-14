@@ -16,9 +16,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [result, setResult] = useState();
   
- const handleSearch=(e)=>{
+ const handleSearch=e=>
    setSearchTerm(e.target.value);
- }
    
   const handleClick = () => {
     const found = dictionary.find(
@@ -38,7 +37,6 @@ function App() {
       <input
         type="text"
         placeholder="Search for a word..."
-        value={searchTerm}
         onChange={handleSearch}
       />
       <button onClick={handleClick}>Search</button>
