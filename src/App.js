@@ -14,11 +14,17 @@ const dictionary=[
 function App() {
  
   const [searchTerm, setSearchTerm] = useState("");
-  const [result, setResult] = useState();
+  const [result, setResult] = useState("Please enter a word to search.");
 
   const handleClick = () => {
+
+    if (!searchTerm.trim()) {
+      setResult("Please enter a word to search.");
+      return;
+    }
+
     const found = dictionary.find(
-      (item) => item.word.toLocaleLowerCase()  === searchTerm.toLocaleLowerCase() 
+      (item) => item.word.toLowerCase() === searchTerm.toLowerCase()
     );
 
     if (found) {
