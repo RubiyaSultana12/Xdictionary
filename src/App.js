@@ -20,8 +20,8 @@ function App() {
    setSearchTerm(e.target.value);
    
   const handleClick = () => {
-    const found = dictionary.find(
-      (item) => item.word.toLowerCase() === searchTerm.toLowerCase()
+    let found = dictionary.find
+      (item => item.word.toLowerCase() === searchTerm.toLowerCase()
     );
 
     if (found) {
